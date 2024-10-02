@@ -22,14 +22,16 @@ const useFormHook = () => {
           input.value = "";
         }
       });
-      setValues(values.map((_) => {
-        return {
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
-        };
-      }));
+      setValues(
+        values.map((_) => {
+          return {
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+          };
+        })
+      );
       setErrors([]);
     }
   };
@@ -42,6 +44,8 @@ const useFormHook = () => {
     const newValues = [...values];
     newValues[index][name as keyof FormValues] = value;
     setValues(newValues);
+    const validationErrors = newValues.map(validate);
+    setErrors(validationErrors as FormErrors[]);
   };
 
   const handleAddField = () => {
@@ -74,12 +78,12 @@ const useFormHook = () => {
     if (index >= 0 && index < values.length) {
       const newValues = [...values];
       const newErrors = [...errors];
-      
-      const filteredValues = newValues.filter((_, i) => i !== index)
-      const filteredErrors = newErrors.filter((_, i) => i !== index)
 
-      setValues(filteredValues)
-      setErrors(filteredErrors)
+      const filteredValues = newValues.filter((_, i) => i !== index);
+      const filteredErrors = newErrors.filter((_, i) => i !== index);
+
+      setValues(filteredValues);
+      setErrors(filteredErrors);
     }
   };
 
