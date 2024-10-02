@@ -1,13 +1,15 @@
 import {
-    LOADING,
-    OPENSIDEBAR,
-    SEARCHDATA,
-    SEARCHTERM,
-    SETSCREEN
+  ADDFILTERS,
+  LOADING,
+  OPENSIDEBAR,
+  SEARCHDATA,
+  SEARCHTERM,
+  SETSCREEN,
+  HIDEICONS
 } from "@/constants/actionTypes";
 import { AppAction, InitialProps } from "@/interface";
 
-//All reducers functionalities
+
 export const ContextReducers = (state: InitialProps, action: AppAction) => {
   switch (action.type) {
     case LOADING:
@@ -20,6 +22,17 @@ export const ContextReducers = (state: InitialProps, action: AppAction) => {
       return { ...state, searchData: action.payload };
     case SEARCHTERM:
       return { ...state, searchTerm: action.payload };
+    case HIDEICONS:
+      return { ...state, hideFilters: action.payload };
+    case ADDFILTERS:
+        const newFilters = { ...state.selectedFilters };
+        const filterId = action.payload.id
+        if (newFilters[filterId]) {
+            delete newFilters[filterId];
+        } else {
+            newFilters[filterId] = action.payload;
+        }
+        return { ...state, selectedFilters: newFilters };
     default:
       return { ...state };
   }

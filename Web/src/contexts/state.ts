@@ -7,4 +7,6 @@ export const initialState: InitialProps = {
   searchData: [] as Array<DataProps>,
   searchTerm: "",
   result: {} as ResultProps,
+  selectedFilters: null,
+  hideFilters: true,
 };

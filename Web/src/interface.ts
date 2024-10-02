@@ -1,9 +1,11 @@
 import {
+  ADDFILTERS,
   LOADING,
   OPENSIDEBAR,
   SEARCHDATA,
   SEARCHTERM,
   SETSCREEN,
+  HIDEICONS
 } from "@/constants/actionTypes";
 
 export interface FormValues {
@@ -48,6 +50,20 @@ export type ResultProps = {
   count: number;
 };
 
+
+export interface NavProps {
+  id: string;
+  name: string;
+  link: string;
+}
+
+export interface FiltersProps {
+  id: string;
+  name: string;
+  isVerified?: boolean;
+  isRating?: boolean;
+  years?: number;
+}
 export interface InitialProps {
   loading: boolean;
   screenSize: number | null;
@@ -55,6 +71,8 @@ export interface InitialProps {
   searchTerm: string;
   result: ResultProps;
   searchData: Array<DataProps>;
+  selectedFilters: { [key: string]: FiltersProps } | null,
+  hideFilters: boolean
 }
 
 export type ChildrenProps = {
@@ -66,11 +84,7 @@ export type AppAction =
   | { type: typeof OPENSIDEBAR; payload: boolean }
   | { type: typeof SETSCREEN; payload: number }
   | { type: typeof SEARCHTERM; payload: string }
-  | { type: typeof SEARCHDATA; payload: Array<DataProps> };
+  | { type: typeof SEARCHDATA; payload: Array<DataProps> }
+  | { type: typeof ADDFILTERS; payload: FiltersProps}
+  | { type: typeof HIDEICONS; payload: boolean};
 
-
-export interface NavProps  {
-  id: string;
-  name: string;
-  link: string
-}

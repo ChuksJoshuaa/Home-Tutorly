@@ -1,11 +1,10 @@
 import Form from "@/components/Form";
-import React from "react";
 
 const FormPage = () => {
   return (
-    <React.Fragment>
+    <div className="pb-10">
       <Form />
-    </React.Fragment>
+    </div>
   );
 };
 
