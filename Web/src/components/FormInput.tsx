@@ -9,7 +9,7 @@ const FormInput = ({ type, label, name, value, error, placeholder, onChange, inp
   } appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-1 outline-none`;
 
   return (
-    <div className="-mx-3 flex flex-col mb-6">
+    <div className="-mx-3 flex flex-col mb-6 px-8">
       <div className="mb-6 md:mb-3">
         <label
           className="block capitalize tracking-wide text-grey-darker text-md md:text-lg font-normal mb-2"
@@ -17,7 +17,7 @@ const FormInput = ({ type, label, name, value, error, placeholder, onChange, inp
         >
           {label}
         </label>
-        {inputType === 'textarea' ? (
+        {inputType === "textarea" ? (
           <textarea
             className={inputClass}
             id={name}
@@ -37,9 +37,7 @@ const FormInput = ({ type, label, name, value, error, placeholder, onChange, inp
             onChange={onChange}
           />
         )}
-        <div className="text-red-900 text-sm">
-          {error ?? ''}
-        </div>
+        <div className="text-red-900 text-sm">{error ?? ""}</div>
       </div>
     </div>
   );

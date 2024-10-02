@@ -1,8 +1,20 @@
+import { AddIcon, LoadingIcon, RemoveIcon } from "@/assets/svgs";
 import FormInput from "@/components/FormInput";
 import useFormHook from "@/components/useFormHook";
 
 const Form = () => {
-  const { values, errors, handleChange, handleSubmit, handleAddField } = useFormHook();
+  const {
+    values,
+    errors,
+    handleChange,
+    handleSubmit,
+    handleAddField,
+    handleEnterKeyPress,
+    submitted,
+    clearAllInputs,
+    formRef,
+    removeIndex,
+  } = useFormHook();
   return (
     <div
       className="form__container"
@@ -10,12 +22,38 @@ const Form = () => {
       data-testid="form__container"
     >
       <form
+        ref={formRef}
         onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded px-8 pt-2 pb-8 mb-4 flex flex-col my-2"
+        className="bg-white shadow-md rounded pt-2 pb-8 mb-4 flex flex-col my-2"
       >
+        <h3 className="py-3 text-center text-lg md:text-xl lg:text-2xl font-bold capitalize px-8 border-b-[2px] border-gray-50">
+          Add New Form
+        </h3>
         {values?.map((value, index) => {
           return (
-            <div>
+            <div key={index}>
+              <div
+                className={`px-5 mb-2 py-3 ${
+                  index > 0 &&
+                  "border-t-[2px] border-gray-50 flex justify-between items-center w-full"
+                }`}
+              >
+                <h3 className="text-base font-medium tracking-wide">
+                  Form {index + 1}
+                </h3>
+                {index > 0 && (
+                  <button
+                    className="flex justify-start items-center cursor-pointer"
+                    onClick={() => removeIndex(index)}
+                    type="button"
+                  >
+                    <RemoveIcon />
+                    <p className="text-sm text-[#F15846] font-medium ml-3">
+                      Remove
+                    </p>
+                  </button>
+                )}
+              </div>
               <FormInput
                 type="text"
                 label="Name"
@@ -60,15 +98,40 @@ const Form = () => {
           );
         })}
 
-        <div>
-          <button type="button" onClick={handleAddField}>
-            Add More
+        <div className="flex justify-between items-center px-8">
+          <button
+            className="flex justify-start items-center cursor-pointer"
+            onClick={handleAddField}
+            type="button"
+          >
+            <AddIcon />
+            <p className="text-sm text-[#1034A6] font-medium ml-3">
+              Add another
+            </p>
           </button>
-          <div>
-            <button type="button" >
+          <div className="flex flex-end justify-end items-center">
+            <button
+              type="button"
+              className="mr-3 text-gray-900 cursor-pointer"
+              onClick={clearAllInputs}
+            >
               Cancel
             </button>
-            <button type="submit">submit</button>
+            <button
+              className={`flex bg-gray-900 capitalize hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-md ${
+                submitted && "opacity-50"
+              }`}
+              onClick={handleSubmit}
+              onKeyDown={handleEnterKeyPress}
+              disabled={submitted}
+            >
+              {submitted && (
+                <div aria-label="Loading..." role="status" className="mr-1">
+                  <LoadingIcon />
+                </div>
+              )}
+              Submit
+            </button>
           </div>
         </div>
       </form>
