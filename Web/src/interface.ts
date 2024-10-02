@@ -43,6 +43,8 @@ export type DataProps = {
   gender: string;
   rating: string;
   subject: "Science" | "Maths" | "English" | "Physics" | "Art" | "Kids Expert";
+  img?: string;
+  years?: number;
 };
 
 export type ResultProps = {
@@ -63,6 +65,8 @@ export interface FiltersProps {
   isVerified?: boolean;
   isRating?: boolean;
   years?: number;
+  img?: string;
+  rating?: number
 }
 export interface InitialProps {
   loading: boolean;
