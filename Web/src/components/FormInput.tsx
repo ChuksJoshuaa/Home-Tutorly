@@ -1,11 +1,18 @@
-import { FormInputProps } from '@/interface';
-import { isEmptyString } from '@/utils/validate';
+import { FormInputProps } from "@/interface";
+import { isEmptyString } from "@/utils/validate";
 
-const FormInput = ({ type, label, name, value, error, placeholder, onChange, inputType }: FormInputProps) => {
+const FormInput = ({
+  type,
+  label,
+  name,
+  value,
+  error,
+  placeholder,
+  onChange,
+  inputType,
+}: FormInputProps) => {
   const inputClass = `${
-    isEmptyString(error ?? "")
-      ? "input"
-      : "input-invalid"
+    isEmptyString(error ?? "") ? "input" : "input-invalid"
   } appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-1 outline-none`;
 
   return (
@@ -16,6 +23,7 @@ const FormInput = ({ type, label, name, value, error, placeholder, onChange, inp
           htmlFor={name}
         >
           {label}
+          <span className="text-[#F15846] mx-1">*</span>
         </label>
         {inputType === "textarea" ? (
           <textarea
