@@ -31,7 +31,7 @@ const Searchbar = () => {
             dispatch({ type: SEARCHTERM, payload: e.target.value })
           }
         />
-        <div className="absolute inset-y-0 right-3 flex items-center pl-3 pointer-events-none">
+        <div className="absolute inset-y-0 right-3 flex items-center pl-3 cursor-pointer">
           <SearchIcon />
         </div>
       </div>

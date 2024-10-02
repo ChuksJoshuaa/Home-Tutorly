@@ -8,20 +8,18 @@ import { useContext } from "react";
 const Filters = () => {
   const { state, dispatch } = useContext(MyContext);
 
-    const handleFilters = (value: FiltersProps) => {
-      dispatch({ type: ADDFILTERS, payload: value });
-    }
+  const handleFilters = (value: FiltersProps) => {
+    dispatch({ type: ADDFILTERS, payload: value });
+  };
 
   return (
-    <div className="shadow-lg rounded-lg bg-white">
+    <div className="shadow-lg rounded-lg bg-white mb-5">
       <div className="flex justify-between items-center py-10 px-10 mx-5 cursor-pointer">
         <h1 className="text-black font-bold text-lg">Filters</h1>
         <FilterIconFirst />
       </div>
 
-      <div
-        className="flex justify-start mx-3 pb-10 px-10 flex-wrap cursor-pointer"
-      >
+      <div className="flex justify-start mx-3 pb-10 px-10 flex-wrap cursor-pointer">
         {filtersData?.map((item, index) => (
           <button
             key={index}

@@ -24,39 +24,48 @@ export const filtersData: FiltersProps[] = [
   {
     id: "male",
     name: "Male",
+    gender: "male"
   },
   {
     id: "female",
     name: "Female",
+    gender: "female"
   },
   {
     id: "kids expert",
     name: "Kids expert",
+    subjects: 'kids expert'
   },
   {
     id: "science",
     name: "Science",
+    subjects: "Science",
   },
   {
     id: "art",
     name: "Art",
+    subjects: "Art"
   },
   {
     id: "5",
     name: "5",
     isRating: true,
+    rating: 5
   },
   {
     id: "maths",
     name: "Maths",
+    subjects: "Maths",
   },
   {
     id: "english",
     name: "English",
+    subjects: "English",
   },
   {
     id: "physics",
     name: "Physics",
+    subjects: "Physics",
   },
   {
     id: "3 years of experience",
@@ -75,7 +84,7 @@ export const tutorsData: DataProps[] = [
     rating: "4.8",
     subject: "Science",
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1727870651/Screenshot_2024-10-02_at_12.56.45_fey4um.png",
-    years: 5
+    years: 5,
   },
   {
     id: UniqueID(),
@@ -94,7 +103,7 @@ export const tutorsData: DataProps[] = [
     bio: "Alice is an English tutor who loves helping students excel in their studies and beyond.",
     isVerified: false,
     gender: "Female",
-    rating: "4.7",
+    rating: "5",
     subject: "English",
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1727870666/Screenshot_2024-10-02_at_12.58.18_woc28m.png",
     years: 5
@@ -105,7 +114,7 @@ export const tutorsData: DataProps[] = [
     bio: "Bob is a Physics tutor with a knack for making complex concepts simple and understandable.",
     isVerified: true,
     gender: "Male",
-    rating: "4.6",
+    rating: "5",
     subject: "Physics",
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1727870656/Screenshot_2024-10-02_at_12.57.22_fei4cf.png",
     years: 3
@@ -116,7 +125,7 @@ export const tutorsData: DataProps[] = [
     bio: "Charlie is an Art tutor with a creative approach to teaching, inspiring students to excel.",
     isVerified: false,
     gender: "Male",
-    rating: "4.5",
+    rating: "5",
     subject: "Art",
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1727870651/Screenshot_2024-10-02_at_12.56.45_fey4um.png",
     years: 4
@@ -127,7 +136,7 @@ export const tutorsData: DataProps[] = [
     bio: "Diana is a Kids Expert who makes learning fun and engaging, fostering a love for learning.",
     isVerified: true,
     gender: "Female",
-    rating: "4.9",
+    rating: "4.2",
     subject: "Kids Expert",
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1727870666/Screenshot_2024-10-02_at_12.58.18_woc28m.png",
     years: 3
@@ -171,7 +180,7 @@ export const tutorsData: DataProps[] = [
     bio: "Hannah is a Physics tutor who makes learning enjoyable and accessible for all students.",
     isVerified: true,
     gender: "Female",
-    rating: "4.6",
+    rating: "5",
     subject: "Physics",
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1727870666/Screenshot_2024-10-02_at_12.58.18_woc28m.png",
   },
@@ -181,7 +190,7 @@ export const tutorsData: DataProps[] = [
     bio: "Ian is an Art tutor with a passion for creativity, encouraging students to express themselves.",
     isVerified: false,
     gender: "Male",
-    rating: "4.5",
+    rating: "3.9",
     subject: "Art",
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1727870651/Screenshot_2024-10-02_at_12.56.45_fey4um.png",
     years: 6
@@ -196,49 +205,5 @@ export const tutorsData: DataProps[] = [
     subject: "Kids Expert",
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1727870666/Screenshot_2024-10-02_at_12.58.18_woc28m.png",
     years: 9
-  },
-  {
-    id: UniqueID(),
-    name: "Kevin Lewis",
-    bio: "Kevin is a Science tutor with a focus on student success, helping them achieve their goals.",
-    isVerified: false,
-    gender: "Male",
-    rating: "4.4",
-    subject: "Science",
-    img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1727870656/Screenshot_2024-10-02_at_12.57.22_fei4cf.png",
-    years: 5
-  },
-  {
-    id: UniqueID(),
-    name: "Laura Martinez",
-    bio: "Laura is a Maths tutor who simplifies complex problems, making learning easier for students.",
-    isVerified: true,
-    gender: "Female",
-    rating: "4.8",
-    subject: "Maths",
-    img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1727870666/Screenshot_2024-10-02_at_12.58.18_woc28m.png",
-    years: 2
-  },
-  {
-    id: UniqueID(),
-    name: "Michael Nelson",
-    bio: "Michael is an English tutor with a passion for teaching, helping students excel academically.",
-    isVerified: false,
-    gender: "Male",
-    rating: "4.7",
-    subject: "English",
-    img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1727870651/Screenshot_2024-10-02_at_12.56.45_fey4um.png",
-    years: 5
-  },
-  {
-    id: UniqueID(),
-    name: "Natalie Owens",
-    bio: "Natalie is a Physics tutor who inspires students to love learning and achieve their best.",
-    isVerified: true,
-    gender: "Female",
-    rating: "4.6",
-    subject: "Physics",
-    img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1727870666/Screenshot_2024-10-02_at_12.58.18_woc28m.png",
-    years: 7
   },
 ];
