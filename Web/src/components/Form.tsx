@@ -27,7 +27,7 @@ const Form = () => {
         className="bg-white shadow-md rounded pt-2 pb-8 mb-4 flex flex-col my-2"
       >
         <h3 className="py-3 text-center text-lg md:text-xl lg:text-2xl font-bold capitalize px-8 border-b-[2px] border-gray-50">
-          Add New Form
+          Contact Form
         </h3>
         {values?.map((value, index) => {
           return (
@@ -38,7 +38,7 @@ const Form = () => {
                   "border-t-[2px] border-gray-50 flex justify-between items-center w-full"
                 }`}
               >
-                <h3 className="text-base font-medium tracking-wide">
+                <h3 className="text-base font-semibold tracking-wide text-[#507FDF]">
                   Form {index + 1}
                 </h3>
                 {index > 0 && (

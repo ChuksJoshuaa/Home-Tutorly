@@ -21,6 +21,10 @@
       "@/utils/*": ["src/utils/*"],
       "@/interface/*": ["src/interface/*"],
       "@/assets/*": ["src/assets/*"],
+      "@/constants/*": ["src/constants/*"],
+      "@/contexts/*": ["src/contexts/*"],
+      "@/reducers/*": ["src/reducers/*"],
+      "@/pages/*": ["src/pages/*"],
     },
 
     /* Linting */
