@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const Home = () => {
   return (
-    <SafeAreaView className="flex-1 relative bg-white">
+    <SafeAreaView>
       <View>
         <Text>Profile Screen</Text>
       </View>

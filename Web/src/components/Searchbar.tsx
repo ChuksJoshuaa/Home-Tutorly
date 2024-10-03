@@ -1,4 +1,4 @@
-import { MediumSearchIcon, SearchIcon } from "@/assets/svgs";
+import { MediumSearchIcon, SearchIcon, UnmediumSearchIcon } from "@/assets/svgs";
 import { HIDEICONS, SEARCHTERM } from "@/constants/actionTypes";
 import MyContext from "@/contexts";
 import { useContext } from "react";
@@ -14,7 +14,7 @@ const Searchbar = () => {
             dispatch({ type: HIDEICONS, payload: !state.hideFilters })
           }
         >
-          <MediumSearchIcon />
+          {state.hideFilters ? <MediumSearchIcon /> : <UnmediumSearchIcon />}
         </button>
       )}
       <div

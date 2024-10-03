@@ -1,7 +1,8 @@
+import { ContextProvider } from "@/contexts";
 import BottomTabNavigation from "@/navigation/BottomTabNavigation";
+import { NavigationProps } from "@/utils/interface";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NavigationProps } from "@/utils/interface";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback, useEffect } from "react";
@@ -39,21 +40,23 @@ export default function App() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <SafeAreaProvider>
-        <NotifierWrapper>
-          <NavigationContainer>
-            <Stack.Navigator>
-              <Stack.Screen
-                name="Bottom"
-                component={BottomTabNavigation}
-                options={{
-                  headerShown: false,
-                }}
-              />
-            </Stack.Navigator>
-          </NavigationContainer>
-        </NotifierWrapper>
-      </SafeAreaProvider>
+      <ContextProvider>
+        <SafeAreaProvider>
+          <NotifierWrapper>
+            <NavigationContainer>
+              <Stack.Navigator>
+                <Stack.Screen
+                  name="Bottom"
+                  component={BottomTabNavigation}
+                  options={{
+                    headerShown: false,
+                  }}
+                />
+              </Stack.Navigator>
+            </NavigationContainer>
+          </NotifierWrapper>
+        </SafeAreaProvider>
+      </ContextProvider>
     </GestureHandlerRootView>
   );
 }

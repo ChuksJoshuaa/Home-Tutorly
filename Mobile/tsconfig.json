@@ -31,7 +31,7 @@
       "@/reducers/*": ["app/reducers/*"],
       "@/state/*": ["app/state/*"],
       "@/images/*": ["app/assets/images/*"],
-      "@/styles/*": ["app/assets/styles/*"]
+      "@/styles/*": ["app/assets/styles/*"],
     }
   },
   "include": [

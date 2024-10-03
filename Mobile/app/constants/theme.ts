@@ -16,7 +16,8 @@ const COLORS = {
   green: " #00C135",
   lightWhite: "#FAFAFC",
   crimson: "#E900D2",
-  hex: "#F9F9F9"
+  hex: "#F9F9F9",
+  $APP_BG: "#F9F9F9"
 };
 
 const SIZES = {
