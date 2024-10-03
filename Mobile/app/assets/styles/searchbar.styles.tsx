@@ -1,5 +1,5 @@
+import { SHADOWS, SIZES } from "@/constants";
 import { StyleSheet } from "react-native";
-
 
 const SearchbarStyles = StyleSheet.create({
   container: {
@@ -7,20 +7,20 @@ const SearchbarStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#F3F4F6',
+    width: '100%'
   },
   inputContainer: {
     position: 'relative',
-    width: '100%',
-    height: 52,
+    width: '87%',
+    height: 50,
   },
   inputContainerOpen: {
     marginHorizontal: 8,
   },
   inputContainerClosed: {
-    marginHorizontal: 0,
+    marginHorizontal: SIZES.xxSmall,
   },
   input: {
-    width: '100%',
     paddingVertical: 12,
     paddingLeft: 20,
     paddingRight: 8,
@@ -29,16 +29,12 @@ const SearchbarStyles = StyleSheet.create({
     borderColor: '#F3F4F6',
     borderWidth: 1,
     borderRadius: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-    elevation: 2,
+    ...SHADOWS
   },
   iconContainer: {
     position: 'absolute',
     right: 12,
-    top: 0,
+    top: -50,
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',

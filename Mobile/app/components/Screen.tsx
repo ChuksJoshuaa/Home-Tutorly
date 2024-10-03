@@ -26,7 +26,7 @@ const ScreenWrapper: React.FC<ScreenWrapperProps> = ({ children }) => {
           <ScrollView
             contentContainerStyle={[
               DashboardStyles.scrollView,
-              { paddingBottom: SIZES.large },
+              { paddingBottom: SIZES.xxxLarge + SIZES.xxxLarge },
             ]}
             keyboardShouldPersistTaps="handled"
             keyboardDismissMode="on-drag"

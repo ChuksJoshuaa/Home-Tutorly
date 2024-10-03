@@ -1,14 +1,28 @@
-import { Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import Cards from "@/components/Card";
+import CustomStatusBar from "@/components/CustomStatusBar";
+import Filters from "@/components/Filters";
+import ProfileFilters from "@/components/ProfileFilters";
+import ScreenWrapper from "@/components/Screen";
+import Searchbar from "@/components/Searchbar";
+import MyContext from "@/contexts";
+import { Fragment, useContext } from "react";
+import { View } from "react-native";
 
-const Home = () => {
+const Profile = () => {
+  const {state} = useContext(MyContext)
   return (
-    <SafeAreaView>
-      <View>
-        <Text>Profile Screen</Text>
-      </View>
-    </SafeAreaView>
+    <Fragment>
+      <CustomStatusBar isTransparent={true} isLight={true} />
+      <ScreenWrapper>
+        <View>
+          <Searchbar />
+          <ProfileFilters />
+          {state.hideFilters && <Filters />}
+          <Cards />
+        </View>
+      </ScreenWrapper>
+    </Fragment>
   );
 };
 
-export default Home;
+export default Profile;
