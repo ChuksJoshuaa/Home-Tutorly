@@ -1,6 +1,6 @@
 import { SuccessNotifier, validate } from "@/utils";
 import { FormErrors, FormValues } from "@/utils/interface";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const useFormHook = () => {
   const initialState = { name: "", email: "", phone: "", message: "" };
@@ -8,20 +8,8 @@ const useFormHook = () => {
   const [errors, setErrors] = useState<FormErrors[]>([]);
   const [submitted, setSubmitted] = useState(false);
 
-  const formRef = useRef<HTMLFormElement>(null);
-
   const clearAllInputs = () => {
-    if (formRef.current) {
-      const inputs = formRef.current.querySelectorAll("input, textarea");
-      inputs.forEach((input) => {
-        if (
-          input instanceof HTMLInputElement ||
-          input instanceof HTMLTextAreaElement
-        ) {
-          input.value = "";
-        }
-      });
-      setValues(
+    setValues(
         values.map((_) => {
           return {
             name: "",
@@ -32,14 +20,13 @@ const useFormHook = () => {
         })
       );
       setErrors([]);
-    }
   };
 
+
   const handleChange = (
-    index: number,
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    index: number, name: string, value: string
   ) => {
-    const { name, value } = e.target;
+
     const newValues = [...values];
     newValues[index][name as keyof FormValues] = value;
     setValues(newValues);
@@ -51,8 +38,7 @@ const useFormHook = () => {
     setValues([...values, initialState]);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     const validationErrors = values.map(validate);
     setErrors(validationErrors as FormErrors[]);
     if (validationErrors.every((error) => Object.keys(error).length === 0)) {
@@ -63,13 +49,6 @@ const useFormHook = () => {
         setSubmitted(false);
         clearAllInputs();
       }, 1000);
-    }
-  };
-
-  const handleEnterKeyPress = (e: React.KeyboardEvent) => {
-    e.preventDefault();
-    if (e.key === "Enter") {
-      handleSubmit(e);
     }
   };
 
@@ -94,9 +73,7 @@ const useFormHook = () => {
     handleChange,
     handleAddField,
     handleSubmit,
-    handleEnterKeyPress,
     clearAllInputs,
-    formRef,
     removeIndex,
   };
 };

@@ -43,12 +43,12 @@ export type CustomStatusProps = {
 
 import {
   ADDFILTERS,
+  HIDEICONS,
   LOADING,
   OPENSIDEBAR,
   SEARCHDATA,
   SEARCHTERM,
   SETSCREEN,
-  HIDEICONS,
 } from "@/constants/actionTypes";
 
 export interface FormValues {
@@ -72,9 +72,7 @@ export interface FormInputProps {
   value: string;
   error?: string;
   placeholder?: string;
-  onChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
+  onChange: (text: string) => void;
   inputType: "input" | "textarea" | "select";
 }
 
