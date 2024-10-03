@@ -1,12 +1,15 @@
+import { SIZES } from "@/constants";
+
 export const screenOptions = {
   tabBarShowLabel: true,
   tabBarHideOnKeyboard: true,
   headerShown: false,
   tabBarStyle: {
     position: "absolute",
-    bottom: 0,
-    right: 0,
-    left: 0,
-    height: 70,
+    bottom: SIZES.xSmall,
+    right: SIZES.xxSmall,
+    left: SIZES.xxSmall,
+    height: SIZES.major,
+    borderRadius: SIZES.large
   },
 };

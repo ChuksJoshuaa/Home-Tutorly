@@ -30,7 +30,8 @@
       "@/screens/*": ["app/screens/*"],
       "@/reducers/*": ["app/reducers/*"],
       "@/state/*": ["app/state/*"],
-      "@/images/*": ["app/assets/images/*"]
+      "@/images/*": ["app/assets/images/*"],
+      "@/styles/*": ["app/assets/styles/*"]
     }
   },
   "include": [
