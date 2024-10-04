@@ -1,5 +1,6 @@
 import { RatingsIcon, VerifiedIcon } from "@/assets/svgs";
 import MyContext from "@/contexts";
+import { getPlatform } from "@/utils";
 import { FiltersProps } from "@/utils/interface";
 import React, { useContext, useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     flexWrap: "wrap",
-    marginTop: -3,
+    marginTop: getPlatform(5, 2),
     marginRight: 12,
     paddingBottom: 4,
   },

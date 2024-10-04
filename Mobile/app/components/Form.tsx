@@ -2,7 +2,7 @@ import { AddIcon, RemoveIcon } from "@/assets/svgs";
 import FormInput from "@/components/FormInput";
 import useFormHook from "@/components/useFormHook";
 import React from "react";
-import { Button, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 const Form = () => {
   const {
@@ -144,7 +144,9 @@ const Form = () => {
           </Text>
         </TouchableOpacity>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Button title="Cancel" onPress={clearAllInputs} color="#000" />
+          <TouchableOpacity onPress={clearAllInputs}>
+            <Text>Cancel</Text>
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={handleSubmit}
             disabled={submitted}

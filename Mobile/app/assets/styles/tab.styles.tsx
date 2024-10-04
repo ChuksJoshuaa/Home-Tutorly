@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.gray,
     paddingVertical: SIZES.xxSmall,
     borderRadius: SIZES.xSmall,
+    marginBottom: getPlatform(SIZES.xLarge, 0),
     opacity: 0.4,
   },
   focusedText: {
