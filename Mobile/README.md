@@ -18,6 +18,7 @@ Before you begin, ensure you have the following installed:
 
 - **Node.js**: Version 18.16.0 or higher
 - **npm**: Version 9.5.1 or higher
+- **Ruby**: Version 3.2.2 or higher
 - **Expo CLI**: Version 6.0.0 or higher
 
 ## Technologies Used
