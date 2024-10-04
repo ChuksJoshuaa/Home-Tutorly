@@ -12,4 +12,4 @@ For details on the web application, including setup and instructions, please che
 
 ---
 
-We hope you find this project useful and easy to navigate. If you have any questions, feel free to reach out to me
+I hope you find this project useful and easy to navigate. If you have any questions, feel free to reach out to me
