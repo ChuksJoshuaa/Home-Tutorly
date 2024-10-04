@@ -10,8 +10,8 @@ Access the live site at [Project-Link](https://home-tutorly.netlify.app/)
 
 ## Features
 
-- **Search Functionality**: Quickly search for tutors by name or subject.
-- **Filter Options**: Filter tutors based on criteria such as years, subject expertise, verification, gendr and ratings.
+- **Search Functionality**: Quickly search for tutors by name.
+- **Filter Options**: Filter tutors based on criteria such as years of experience, subject expertise, verification, gendr and ratings.
 - **Responsive Design**: Built with Tailwind CSS to ensure a seamless experience across all devices.
 - **State Management**: Utilizes React Context for efficient state management.
 - **Type Safety**: Developed using TypeScript for enhanced code reliability.
@@ -58,12 +58,13 @@ No additional configuration is required to run the project.
 ```plaintext
 ├── components/ # Reusable React components
 ├── pages/ # Main application pages
-├── contexts/ # Context API providers and consumers
-├── reducers/ # Redux reducers and slices
+├── contexts/ # Context API providers
+├── reducers/ # React reducers and functionality
 ├── utils/ # Utility functions and helpers
 ├── cypress/ # End-to-end tests using Cypress
 
 ```
+
 ## Usage
 
 To start the application and begin using Home tutorly, follow these steps:
