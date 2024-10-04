@@ -38,13 +38,9 @@ const useFilterHook = (data: DataProps[],
       }
 
       if (filter.subjects) {
-        const selectedSubjects = fil.map((subject) =>
-          subject?.subjects?.toLowerCase()
-        );
+        const selectedSubjects = filter.subjects.toLowerCase();
         filteredData = filteredData.filter((tutor) =>
-          selectedSubjects.some((subject) =>
-            tutor.subject?.toLowerCase().includes(subject ?? "")
-          )
+          tutor.subject?.toLowerCase().includes(selectedSubjects)
         );
       }
     });

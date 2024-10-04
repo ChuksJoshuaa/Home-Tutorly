@@ -8,5 +8,5 @@ export const initialState: InitialProps = {
   searchTerm: "",
   result: {} as ResultProps,
   selectedFilters: null,
-  hideFilters: true,
+  hideFilters: false,
 };

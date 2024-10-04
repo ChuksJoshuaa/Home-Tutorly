@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Home Tutorly",
+    "slug": "homeTutorly",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./app/assets/ic_launcher_foreground.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./app/assets/splash_new.png"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.homeTutorly.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./app/assets/ic_launcher_foreground.png",
+        "backgroundColor": "#E900D2"
+      },
+      "package": "com.homeTutorly.app"
+    },
+    "web": {
+      "favicon": "./app/assets/favicon.png"
+    }
+  }
+}

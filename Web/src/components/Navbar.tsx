@@ -81,7 +81,7 @@ const Navbar = () => {
       {state.isSidebarOpen && openDropdown && (
         <div className="absolute z-50 top-20 left-1/2 transform -translate-x-1/2 w-5/6 bg-gray-100 flex flex-col justify-center items-center md:hidden rounded-xl mt-5 border-2 border-gray-100">
           {navItems.map((item, idx) => (
-            <Link to={item.link} key={idx}>
+            <Link to={item.link} key={idx} onClick={() => setOpenDropdown(false)}>
               <ul
                 className="flex flex-col items-center gap-5 text-white py-3 list-none cursor-pointer"
                 onMouseOver={() => setSelectedIndex(idx)}

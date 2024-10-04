@@ -45,7 +45,7 @@ const FormInput = ({
             onChange={onChange}
           />
         )}
-        <div className="text-red-900 text-sm">{error ?? ""}</div>
+        <div className="text-red-900 text-sm" data-testid="error-message">{error ?? ""}</div>
       </div>
     </div>
   );
