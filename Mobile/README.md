@@ -1,6 +1,6 @@
 # Home tutorly Mobile
 
-<img src="https://res.cloudinary.com/chuksmbanaso/image/upload/v1728045484/Simulator_Screenshot_-_iPhone_14_Pro_-_2024-10-04_at_13.37.46_nl6msu.png" title="Image" alt="image" width="60%" height="500px">
+<img src="https://res.cloudinary.com/chuksmbanaso/image/upload/v1728045484/Simulator_Screenshot_-_iPhone_14_Pro_-_2024-10-04_at_13.37.46_nl6msu.png" title="Image" alt="image" width="50%">
 
 Home tutorly Mobile is a React Native-based application that allows users to search and filter tutors based on various criteria. It provides an intuitive interface for users to find the best tutors that match their needs on mobile devices.
 
@@ -50,16 +50,20 @@ To install and run Home tutorly Mobile locally, follow these steps:
 To start the application and begin using Home tutorly Mobile, follow these steps:
 
 1. **Start the application**
+
    ```bash
    npm run android
    ```
+
    or
+
    ```bash
    npm run ios
    ```
+
    This will start the application on an Android or iOS emulator, respectively.
 
-2. **Use the search and filter features** to find tutors that match your criteria.   
+2. **Use the search and filter features** to find tutors that match your criteria.
 
 ## Configuration
 
