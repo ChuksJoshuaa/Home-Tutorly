@@ -1,57 +1,49 @@
+import { DataProps, FiltersProps } from "@/utils/interface";
 
+const useFilterHook = (
+  data: DataProps[],
+  filters: { [key: string]: FiltersProps }
+) => {
+  let filteredData = data;
 
-import { DataProps, FiltersProps } from '@/utils/interface';
+  const fil = filters ? Object.values(filters) : [];
 
-const useFilterHook = (data: DataProps[],
-    filters: { [key: string]: FiltersProps }) => {
- 
-    let filteredData = data;
+  const hasMale = fil.some((filter) => filter.gender === "male");
+  const hasFemale = fil.some((filter) => filter.gender === "female");
 
-    const fil = filters ? Object.values(filters) : [];
+  fil.forEach((filter) => {
+    if (filter.isVerified) {
+      filteredData = filteredData.filter(
+        (tutor) => filter?.isVerified === tutor.isVerified
+      );
+    }
+    if (filter.gender && !(hasMale && hasFemale)) {
+      filteredData = filteredData.filter(
+        (tutor) => filter?.gender?.toLowerCase() === tutor.gender.toLowerCase()
+      );
+    }
 
-    const hasMale = fil.some((filter) => filter.gender === "male");
-    const hasFemale = fil.some((filter) => filter.gender === "female");
+    if (filter.years) {
+      filteredData = filteredData.filter(
+        (tutor) => (tutor.years ?? 0) === filter.years
+      );
+    }
 
-    fil.forEach((filter) => {
-      if (filter.isVerified) {
-        filteredData = filteredData.filter(
-          (tutor) => filter?.isVerified === tutor.isVerified
-        );
-      }
-      if (filter.gender && !(hasMale && hasFemale)) {
-        filteredData = filteredData.filter(
-          (tutor) =>
-            filter?.gender?.toLowerCase() === tutor.gender.toLowerCase()
-        );
-      }
+    if (filter.rating) {
+      filteredData = filteredData.filter(
+        (tutor) => (parseFloat(tutor.rating) ?? 0) === filter?.rating
+      );
+    }
 
-      if (filter.years) {
-        filteredData = filteredData.filter(
-          (tutor) => (tutor.years ?? 0) === filter.years
-        );
-      }
+    if (filter.subjects) {
+      const selectedSubjects = filter.subjects.toLowerCase();
+      filteredData = filteredData.filter((tutor) =>
+        tutor.subject?.toLowerCase().includes(selectedSubjects)
+      );
+    }
+  });
 
-      if (filter.rating) {
-        filteredData = filteredData.filter(
-          (tutor) => (parseFloat(tutor.rating) ?? 0) === filter?.rating
-        );
-      }
+  return filteredData;
+};
 
-      if (filter.subjects) {
-        const selectedSubjects = fil.map((subject) =>
-          subject?.subjects?.toLowerCase()
-        );
-        filteredData = filteredData.filter((tutor) =>
-          selectedSubjects.some((subject) =>
-            tutor.subject?.toLowerCase().includes(subject ?? "")
-          )
-        );
-      }
-    });
-
-    return filteredData;
-  
-    
-}
-
-export default useFilterHook
+export default useFilterHook;
