@@ -124,6 +124,7 @@ const Form = () => {
               onClick={handleSubmit}
               onKeyDown={handleEnterKeyPress}
               disabled={submitted}
+              type={'submit'}
             >
               {submitted && (
                 <div aria-label="Loading..." role="status" className="mr-1">
