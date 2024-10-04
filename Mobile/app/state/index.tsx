@@ -1,4 +1,5 @@
 import { SIZES } from "@/constants";
+import { getPlatform } from "@/utils";
 import { InitialProps, ResultProps } from "@/utils/interface";
 
 export const screenOptions = {
@@ -10,8 +11,8 @@ export const screenOptions = {
     bottom: SIZES.xSmall,
     right: SIZES.xxSmall,
     left: SIZES.xxSmall,
-    height: SIZES.major,
-    borderRadius: SIZES.large
+    height: getPlatform(SIZES.major, SIZES.major + SIZES.xSmall),
+    borderRadius: getPlatform(SIZES.large, SIZES.large + SIZES.xSmall)
   },
 };
 

@@ -44,8 +44,10 @@ const useFormHook = () => {
     const newValues = [...values];
     newValues[index][name as keyof FormValues] = value;
     setValues(newValues);
-    const validationErrors = newValues.map(validate);
-    setErrors(validationErrors as FormErrors[]);
+    if (errors[index] && Object.keys(errors[index]).length > 0) {
+      const validationErrors = newValues.map(validate);
+      setErrors(validationErrors as FormErrors[]);
+    }
   };
 
   const handleAddField = () => {

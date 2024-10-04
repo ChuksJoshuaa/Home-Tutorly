@@ -22,7 +22,7 @@ const BottomTabNavigation = () => {
           options={{
             tabBarLabel: ({ focused }) => (
               <View
-                style={focused ? TabStyles.focusedTab : TabStyles.unfocusedTab}
+                style={focused ? TabStyles.focusedTab : TabStyles.unIcon}
               >
                 {getTabIcon(tab, focused)}
                 {focused && (

@@ -11,11 +11,13 @@ describe('FormInput Component', () => {
   it('should apply the correct class based on error state', () => {
     cy.get('input[name="name"]').should('have.class', 'input');
     cy.get('input[name="name"]').type('Test').clear();
+    cy.get('button[type="submit"]').click();
     cy.get('input[name="name"]').should('have.class', 'input-invalid');
   });
 
   it('should display an error message when there is an error', () => {
     cy.get('input[name="name"]').type('Test').clear();
+    cy.get('button[type="submit"]').click();
     cy.get('[data-testid="error-message"]').should(
       "contain",
       "Name is required"
