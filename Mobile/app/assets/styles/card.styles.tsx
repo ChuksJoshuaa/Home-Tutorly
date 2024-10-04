@@ -1,5 +1,5 @@
 import { FONTS } from "@/constants/theme";
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
 const CardStyles = StyleSheet.create({
   container: {
@@ -78,7 +78,7 @@ const CardStyles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "300",
     color: "#222",
-    fontFamily: FONTS.regular,
+    fontFamily: Platform.OS === 'ios' ? FONTS.light : FONTS.regular,
   },
 });
 

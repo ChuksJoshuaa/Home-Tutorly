@@ -39,9 +39,9 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     flexWrap: "wrap",
-    marginTop: 12,
+    marginTop: -3,
     marginRight: 12,
-    paddingBottom: 20,
+    paddingBottom: 4,
   },
   button: {
     flexDirection: "row",
