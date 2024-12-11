@@ -35,7 +35,7 @@ To install and run Home tutorly Mobile locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/ChuksJoshuaa/teach-for-all-frontend-task
+   git clone https://github.com/ChuksJoshuaa/Home-Tutorly.git
    ```
 2. **Navigate to the project directory**:
    ```bash
